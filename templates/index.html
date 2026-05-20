@@ -21,7 +21,7 @@
                 <label for="bhk">Enter BHK:</label><br>
 
                 <input type="number" id="bhk" name="bhk" min="1" max="5" required>
-            </div><br>
+            </div>
 
             <div>
                 <label for="furnishing_status">Furnishing:</label><br>
@@ -34,27 +34,45 @@
                     <option value="Unfurnished">Unfurnished</option>
 
                 </select>
-            </div><br>
+            </div>
 
             <div>
                 <label for="size_sqft">Enter Size (in Sqft):</label><br>
 
                 <input type="number" id="size_sqft" name="size_sqft" min="100" required>
-            </div><br>
+            </div>
 
             <div>
                 <label for="bathroom">Enter Number of Bathrooms:</label><br>
 
                 <input type="number" id="bathroom" name="bathroom" min="1" max="5" required>
-            </div><br>
+            </div>
 
-            <button type="submit">Submit</button>
+            <button type="submit">Predict Rent</button>
 
         </form>
 
         {% if prediction %}
 
-            <h2>Predicted Price: ₹ {{ prediction }}</h2>
+        <div class="result-box">
+
+            <h3>Estimated Monthly Rent</h3>
+
+            <h2>₹ {{ prediction }}</h2>
+
+            <div class="details">
+
+                <p><strong>BHK:</strong> {{ request.form['bhk'] }}</p>
+
+                <p><strong>Furnishing:</strong> {{ request.form['furnishing_status'] }}</p>
+
+                <p><strong>Size:</strong> {{ request.form['size_sqft'] }} Sqft</p>
+
+                <p><strong>Bathrooms:</strong> {{ request.form['bathroom'] }}</p>
+
+            </div>
+
+        </div>
 
         {% endif %}
 

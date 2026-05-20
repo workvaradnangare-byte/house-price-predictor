@@ -1,106 +1,251 @@
 body {
     font-family: 'Poppins', sans-serif;
 
-    /* Background Image */
     background: url("bg.png") no-repeat center center/cover;
 
     margin: 0;
     padding: 0;
+
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* Dark overlay */
+
 body::before {
     content: "";
+
     position: fixed;
+
     inset: 0;
+
     background: rgba(10, 10, 20, 0.6);
+
     z-index: -1;
 }
 
-/* Glass container */
+/* Main Container */
+
 .Container {
-    width: 380px;
-    margin: 70px auto;
-    padding: 30px;
+
+    width: 370px;
+
+    padding: 22px;
 
     background: rgba(255, 255, 255, 0.08);
+
     backdrop-filter: blur(15px);
 
-    border-radius: 15px;
+    border-radius: 16px;
+
     border: 1px solid rgba(255,255,255,0.2);
 
     box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+
     color: white;
 }
 
 /* Heading */
+
 h1 {
+
     text-align: center;
-    margin-bottom: 25px;
+
+    margin-top: 0;
+    margin-bottom: 18px;
+
+    font-size: 28px;
+
     font-weight: 600;
+
     letter-spacing: 1px;
 }
 
 /* Labels */
+
 label {
+
     font-size: 14px;
+
     color: #ddd;
+
     font-weight: 400;
 }
 
-/* Inputs */
-input, select {
+/* Input Fields */
+
+input,
+select {
+
     width: 100%;
-    padding: 10px;
-    margin-top: 6px;
-    margin-bottom: 12px;
+
+    padding: 9px;
+
+    margin-top: 5px;
+    margin-bottom: 10px;
 
     border-radius: 8px;
+
     border: 1px solid rgba(255,255,255,0.2);
 
     background: rgba(255,255,255,0.1);
+
     color: white;
 
     outline: none;
+
+    box-sizing: border-box;
+
     transition: 0.3s;
 }
 
-/* Placeholder color */
+/* Placeholder */
+
 input::placeholder {
+
     color: #ccc;
 }
 
-/* Focus effect */
-input:focus, select:focus {
+/* Focus Effect */
+
+input:focus,
+select:focus {
+
     border-color: #8b9cff;
-    box-shadow: 0 0 10px rgba(139,156,255,0.6);
+
+    box-shadow: 0 0 10px rgba(139,156,255,0.5);
 }
 
-/* Dropdown text fix */
+/* Dropdown Options */
+
 select option {
+
     color: black;
 }
 
 /* Button */
+
 button {
+
     width: 100%;
-    padding: 12px;
+
+    padding: 11px;
+
+    margin-top: 5px;
 
     border: none;
+
     border-radius: 8px;
 
     background: linear-gradient(135deg, #667eea, #764ba2);
+
     color: white;
 
-    font-size: 16px;
+    font-size: 15px;
+
     font-weight: 500;
 
     cursor: pointer;
+
     transition: 0.3s;
 }
 
-/* Hover animation */
+/* Button Hover */
+
 button:hover {
+
     transform: translateY(-2px);
+
     box-shadow: 0 10px 20px rgba(102,126,234,0.4);
+}
+
+/* Result Box */
+
+.result-box {
+
+    margin-top: 18px;
+
+    padding: 16px;
+
+    background: rgba(255,255,255,0.12);
+
+    border-radius: 12px;
+
+    border: 1px solid rgba(255,255,255,0.2);
+
+    text-align: center;
+
+    animation: fadeIn 0.5s ease;
+}
+
+/* Result Heading */
+
+.result-box h3 {
+
+    margin: 0;
+
+    font-size: 17px;
+
+    color: #ddd;
+}
+
+/* Predicted Rent */
+
+.result-box h2 {
+
+    margin: 10px 0;
+
+    font-size: 30px;
+
+    color: #ffffff;
+
+    font-weight: 600;
+}
+
+/* Details Section */
+
+.details {
+
+    text-align: left;
+
+    margin-top: 12px;
+
+    background: rgba(255,255,255,0.08);
+
+    padding: 12px;
+
+    border-radius: 10px;
+}
+
+/* Detail Text */
+
+.details p {
+
+    margin: 6px 0;
+
+    font-size: 14px;
+
+    color: #f1f1f1;
+}
+
+/* Animation */
+
+@keyframes fadeIn {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(15px);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+    }
 }
