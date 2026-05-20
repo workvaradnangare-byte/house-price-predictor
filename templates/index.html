@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home</title>
+
+    <link rel="stylesheet" href="/static/css/index.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <div class="Container">
+
+        <h1>Thane Price Predictor</h1>
+
+        <form method="POST">
+
+            <div>
+                <label for="bhk">Enter BHK:</label><br>
+
+                <input type="number" id="bhk" name="bhk" min="1" max="5" required>
+            </div><br>
+
+            <div>
+                <label for="furnishing_status">Furnishing:</label><br>
+
+                <select id="furnishing_status" name="furnishing_status" required>
+
+                    <option value="">---Select---</option>
+                    <option value="Furnished">Furnished</option>
+                    <option value="Semi-Furnished">Semi-Furnished</option>
+                    <option value="Unfurnished">Unfurnished</option>
+
+                </select>
+            </div><br>
+
+            <div>
+                <label for="size_sqft">Enter Size (in Sqft):</label><br>
+
+                <input type="number" id="size_sqft" name="size_sqft" min="100" required>
+            </div><br>
+
+            <div>
+                <label for="bathroom">Enter Number of Bathrooms:</label><br>
+
+                <input type="number" id="bathroom" name="bathroom" min="1" max="5" required>
+            </div><br>
+
+            <button type="submit">Submit</button>
+
+        </form>
+
+        {% if prediction %}
+
+            <h2>Predicted Price: ₹ {{ prediction }}</h2>
+
+        {% endif %}
+
+    </div>
+
+</body>
+</html>
